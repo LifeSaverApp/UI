@@ -70,8 +70,8 @@ public class ClientApp {
 			switch (choice) {
 				//DIAPLAY PERSONAL DETAILS
 				case 1:
-					 String ENDPOINT = "http://10.218.200.214:5500/introsde/businessLogic/getPersonDetails";
-					 //String ENDPOINT = "https://businesslogic.herokuapp.com/introsde/businessLogic/getPersonDetails";
+					 //String ENDPOINT = "http://10.218.200.214:5500/introsde/businessLogic/getPersonDetails";
+					 String ENDPOINT = "https://businesslogic.herokuapp.com/introsde/businessLogic/getPersonDetails";
 
 					 DefaultHttpClient client = new DefaultHttpClient();
 					 HttpGet request = new HttpGet(ENDPOINT);
@@ -130,8 +130,8 @@ public class ClientApp {
 			  			}
 
 			 	//Edit measure STEPS in Life Status
-			        ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
-			      //ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
+			      //  ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
+			      ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
 			        ClientConfig clientConfig9 = new ClientConfig();
 				 	Client client9 = ClientBuilder.newClient(clientConfig9);
 	                client = new DefaultHttpClient();
@@ -152,8 +152,8 @@ public class ClientApp {
 
 				    	//get quote motivation from foresmatic
 
-				    	String ENDPOINT3 = "http://10.218.200.214:5901/introsde/processCentric/getQuote2";
-				    	//String ENDPOINT3 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
+				    	//String ENDPOINT3 = "http://10.218.200.214:5901/introsde/processCentric/getQuote2";
+				    	String ENDPOINT3 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
 
 				    	DefaultHttpClient client3 = new DefaultHttpClient();
 				    	HttpGet request3 = new HttpGet(ENDPOINT3);
@@ -174,8 +174,8 @@ public class ClientApp {
 
 				    	  //get quote motivation from quotedesignapi
 
-				    	    String ENDPOINT4 = "http://10.218.200.214:5901/introsde/processCentric/getQuote";
-				    	    //String ENDPOINT4 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote";
+				    	    //String ENDPOINT4 = "http://10.218.200.214:5901/introsde/processCentric/getQuote";
+				    	    String ENDPOINT4 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote";
 				        	DefaultHttpClient newclient4 = new DefaultHttpClient();
 				        	HttpGet newrequest4 = new HttpGet(ENDPOINT4);
 				        	HttpResponse newresponse4 = newclient4.execute(newrequest4);
@@ -194,8 +194,8 @@ public class ClientApp {
 					    	   String permalink= newObject4.getString("permalink");
 				    	// get value from DB  and compare with new value
 
-			    		String ENDPOINT2 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
-			    		//String ENDPOINT2 = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
+			    		//String ENDPOINT2 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
+			    		String ENDPOINT2 = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
 						 DefaultHttpClient client2 = new DefaultHttpClient();
 						 HttpGet request2 = new HttpGet(ENDPOINT2);
 						 HttpResponse response2 = client2.execute(request2);
@@ -264,8 +264,8 @@ public class ClientApp {
 		  			}
 
 		 	//Edit measure sleep in LifeStatus
-		        ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
-		      //ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
+		      //  ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
+		      ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
 		       ClientConfig clientConfig1 = new ClientConfig();
 		 	   Client client1 = ClientBuilder.newClient(clientConfig1);
                 client = new DefaultHttpClient();
@@ -286,8 +286,8 @@ public class ClientApp {
 
 		    	//get quote motivation from foresmatic
 
-		    	String ENDPOINT5 = "http://10.218.200.214:5901/introsde/processCentric/getQuote2";
-		    	//String ENDPOINT5 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
+		    	//String ENDPOINT5 = "http://10.218.200.214:5901/introsde/processCentric/getQuote2";
+		    	String ENDPOINT5 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
 		    	DefaultHttpClient newclient3 = new DefaultHttpClient();
 		    	HttpGet newrequest3 = new HttpGet(ENDPOINT5);
 		    	HttpResponse newresponse3 = newclient3.execute(newrequest3);
@@ -307,8 +307,8 @@ public class ClientApp {
 
 		    	  //get quote motivation from quotedesignapi
 
-		    	    String ENDPOINT6 = "http://10.218.200.214:5901/introsde/processCentric/getQuote";
-		    	    //String ENDPOINT6 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote";
+		    	    //String ENDPOINT6 = "http://10.218.200.214:5901/introsde/processCentric/getQuote";
+		    	    String ENDPOINT6 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote";
 		        	DefaultHttpClient newclient6 = new DefaultHttpClient();
 		        	HttpGet newrequest6 = new HttpGet(ENDPOINT6);
 		        	HttpResponse newresponse6 = newclient6.execute(newrequest6);
@@ -327,8 +327,8 @@ public class ClientApp {
 			    	   String permalink1= newObject6.getString("permalink");
 		    	// get value from DB  and compare with new value
 
-	    		 String ENDPOINT7 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
-	    		 //String ENDPOINT7 = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
+	    		 //String ENDPOINT7 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
+	    		 String ENDPOINT7 = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
 				 DefaultHttpClient newclient2 = new DefaultHttpClient();
 				 HttpGet newrequest2 = new HttpGet(ENDPOINT7);
 				 HttpResponse newresponse2 = newclient2.execute(newrequest2);
@@ -395,8 +395,8 @@ public class ClientApp {
 			  			}
 
 			 	//Edit measure water in Life Status
-			       ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
-			  	   //ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
+			   //    ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
+			   ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
 			       ClientConfig newclientConfig1 = new ClientConfig();
 			 	   Client newclient1 = ClientBuilder.newClient(newclientConfig1);
                     client = new DefaultHttpClient();
@@ -417,8 +417,8 @@ public class ClientApp {
 
 			    	//get quote motivation from foresmatic
 
-			    	String ENDPOINT8 = "http://10.218.200.214:5901/introsde/processCentric/getQuote2";
-			    	//String ENDPOINT8 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
+			    	//String ENDPOINT8 = "http://10.218.200.214:5901/introsde/processCentric/getQuote2";
+			    	String ENDPOINT8 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
 			    	DefaultHttpClient newclient8= new DefaultHttpClient();
 			    	HttpGet newrequest8 = new HttpGet(ENDPOINT8);
 			    	HttpResponse newresponse8= newclient8.execute(newrequest8);
@@ -438,8 +438,8 @@ public class ClientApp {
 
 			    	  //get quote motivation from quotedesignapi
 
-			    	    String ENDPOINT9 = "http://10.218.200.214:5901/introsde/processCentric/getQuote";
-			    	    //String ENDPOINT9 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote";
+			    	    //String ENDPOINT9 = "http://10.218.200.214:5901/introsde/processCentric/getQuote";
+			    	    String ENDPOINT9 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote";
 			        	DefaultHttpClient newclient9 = new DefaultHttpClient();
 			        	HttpGet newrequest9 = new HttpGet(ENDPOINT9);
 			        	HttpResponse newresponse9 = newclient9.execute(newrequest9);
@@ -458,8 +458,8 @@ public class ClientApp {
 				    	   String permalink2= newObject9.getString("permalink");
 			    	// get value from DB  and compare with new value
 
-		    		String ENDPOINT10 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
-		    		//String ENDPOINT10 = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
+		    		//String ENDPOINT10 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
+		    		String ENDPOINT10 = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
 
 					 DefaultHttpClient newclient10 = new DefaultHttpClient();
 					 HttpGet newrequest10 = new HttpGet(ENDPOINT10);
@@ -527,8 +527,8 @@ public class ClientApp {
 			  			}
 
 			 	//Change the goal STEPS
-			    	ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateGoal";
-			    	//ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateGoal";
+			    	//ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateGoal";
+			    	ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateGoal";
 			    	ClientConfig clientConfig4 = new ClientConfig();
 			 	Client client4 = ClientBuilder.newClient(clientConfig4);
 
@@ -565,8 +565,8 @@ public class ClientApp {
 			  			}
 
 			 	//Change the goal SLEEP
-			    	ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateGoal";
-			    	//ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateGoal";
+			    	//ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateGoal";
+			    	ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateGoal";
 			    	ClientConfig clientConfig5 = new ClientConfig();
 			 	Client client5 = ClientBuilder.newClient(clientConfig5);
 
@@ -602,8 +602,8 @@ public class ClientApp {
 
 			 	//Change the WATER goal
 
-			  	ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateGoal";
-			  	//ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateGoal";
+			  	//ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateGoal";
+			  	ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateGoal";
 			    ClientConfig newclientConfig5 = new ClientConfig();
 			 	Client newclient5 = ClientBuilder.newClient(newclientConfig5);
 
@@ -627,8 +627,8 @@ public class ClientApp {
 			 break;
 			 	//DISPLAY GOAL
                 case 8:
-                    ENDPOINT = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
-                    //ENDPOINT = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
+                    //ENDPOINT = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
+                    ENDPOINT = "https://businesslogic.herokuapp.com/introsde/businessLogic/getGoals";
                     DefaultHttpClient client6 = new DefaultHttpClient();
                     HttpGet request6 = new HttpGet(ENDPOINT);
                     HttpResponse response6 = client6.execute(request6);
