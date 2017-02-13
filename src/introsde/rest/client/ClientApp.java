@@ -36,7 +36,6 @@ public class ClientApp {
 				+ "                                                          - WATER CONSUMPTION(Recommended not less than 3 Litres per day);\n"
 				+ "                                                          - HOURS OF SLEEP(Recommended not less than 8 hours );\n"
 				+ "                                                          - NUMBER OF STEPS(Recommended not less than 3000 steps);\n"
-				+ "                                                          - BMI MEASUREMENT.\n"
 				+ "These standards(GOALS) are already set by default but feel free to IMPROVE them\n");
 
 
@@ -63,15 +62,15 @@ public class ClientApp {
 			System.out.println("Waiting...: ");
 			choice = Integer.parseInt(input.nextLine());
 
-			if (choice < 0 || choice > 6) {
+			if (choice < 0 || choice > 8) {
 				System.out.print("\nSORRY, WRONG CHOICE, read carefully and choose from the available options!\n\n");
 			}
 
 			switch (choice) {
 				//DIAPLAY PERSONAL DETAILS
 				case 1:
-					 //String ENDPOINT = "http://10.218.200.214:5500/introsde/businessLogic/getPersonDetails";
-					 String ENDPOINT = "https://businesslogic.herokuapp.com/introsde/businessLogic/getPersonDetails";
+					 String ENDPOINT = "http://10.218.200.214:5500/introsde/businessLogic/getPersonDetails";
+					 //String ENDPOINT = "https://businesslogic.herokuapp.com/introsde/businessLogic/getPersonDetails";
 
 					 DefaultHttpClient client = new DefaultHttpClient();
 					 HttpGet request = new HttpGet(ENDPOINT);
@@ -149,11 +148,13 @@ public class ClientApp {
 
 				    	res9 = service9.request(MediaType.APPLICATION_JSON_TYPE).put(Entity.json(updateLifeStatus9));//update lifeStatus
 				    	putResp9 = res9.readEntity(String.class);
+				    	
+				 
 
 				    	//get quote motivation from foresmatic
 
 				    	//String ENDPOINT3 = "http://10.218.200.214:5901/introsde/processCentric/getQuote2";
-				    	String ENDPOINT3 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
+				    	 String ENDPOINT3 = "https://processcentric.herokuapp.com/introsde/processCentric/getQuote2";
 
 				    	DefaultHttpClient client3 = new DefaultHttpClient();
 				    	HttpGet request3 = new HttpGet(ENDPOINT3);
@@ -192,6 +193,29 @@ public class ClientApp {
 				        	 String quote = newObject4.getString("quote");
 					    	 String author = newObject4.getString("author");
 					    	   String permalink= newObject4.getString("permalink");
+					   	   
+					    	 //get quote motivation from instagram api
+
+					    	    //String ENDPOINT44 = "http://10.218.200.214:5901/introsde/processCentric/getPicUrl";
+					    	    String ENDPOINT44 = "https://processcentric.herokuapp.com/introsde/processCentric/getPicUrl";
+					        	DefaultHttpClient newclient44 = new DefaultHttpClient();
+					        	HttpGet newrequest44 = new HttpGet(ENDPOINT44);
+					        	HttpResponse newresponse44 = newclient44.execute(newrequest44);
+
+					        	BufferedReader newrd44 = new BufferedReader(new InputStreamReader(newresponse44.getEntity().getContent()));
+
+					        	StringBuffer newresult44 = new StringBuffer();
+					        	String newline44 = "";
+					        	while ((newline44 = newrd44.readLine()) != null) {
+					        		newresult44.append(newline44);
+					        	}
+
+					        	JSONObject newObject44 = new JSONObject(newresult44.toString());
+					        	 String picture_url = newObject44.getString("picture_url");
+					        	 
+						    	   
+						    	   
+						    	   
 				    	// get value from DB  and compare with new value
 
 			    		//String ENDPOINT2 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
@@ -225,6 +249,7 @@ public class ClientApp {
 				    					 System.out.println("Quote : "+ quoteText);
 				    					 System.out.println("Author : "+ quoteAuthor);
 				    					 System.out.println("Source : "+ quoteLink);
+				    					 System.out.println("Here is your extra reward, a link to one of your Favourite athletes: "+ picture_url);
 				    				 }
 				    				 else if  (value < newO.getJSONObject(i).getInt("value")   ){
 				    					 System.out.println("\nTOO BAD, GOAL NOT REACHED. YOU NEED TO FOCUS. YOU CAN DO IT");
@@ -247,7 +272,8 @@ public class ClientApp {
 
 				    		 }
 
-				    	}else{
+				    	}
+				    	else{
 				  	    		System.out.println("UPDATE ERROR, PLEASE, TRY AGAIN!");
 				  	    	}
 				break;
@@ -264,7 +290,7 @@ public class ClientApp {
 		  			}
 
 		 	//Edit measure sleep in LifeStatus
-		      //  ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
+		      //ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
 		      ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
 		       ClientConfig clientConfig1 = new ClientConfig();
 		 	   Client client1 = ClientBuilder.newClient(clientConfig1);
@@ -325,6 +351,25 @@ public class ClientApp {
 		        	 String quote1 = newObject6.getString("quote");
 			    	 String author1 = newObject6.getString("author");
 			    	   String permalink1= newObject6.getString("permalink");
+			    	   
+			    	 //get quote motivation from instagram api
+
+			    	    //String ENDPOINT45 = "http://10.218.200.214:5901/introsde/processCentric/getPicUrl";
+			    	    String ENDPOINT45 = "https://processcentric.herokuapp.com/introsde/processCentric/getPicUrl";
+			        	DefaultHttpClient newclient45 = new DefaultHttpClient();
+			        	HttpGet newrequest45 = new HttpGet(ENDPOINT45);
+			        	HttpResponse newresponse45 = newclient45.execute(newrequest45);
+
+			        	BufferedReader newrd45 = new BufferedReader(new InputStreamReader(newresponse45.getEntity().getContent()));
+
+			        	StringBuffer newresult45 = new StringBuffer();
+			        	String newline45 = "";
+			        	while ((newline45 = newrd45.readLine()) != null) {
+			        		newresult45.append(newline45);
+			        	}
+
+			        	JSONObject newObject45 = new JSONObject(newresult45.toString());
+			        	 String picture_url2 = newObject45.getString("picture_url");
 		    	// get value from DB  and compare with new value
 
 	    		 //String ENDPOINT7 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
@@ -355,7 +400,7 @@ public class ClientApp {
 		    					 System.out.print("Your sleep goal is "+sleepObjectJson.getJSONObject(i).getInt("value")+ " hours ");
 		    					 System.out.println("and you slept for "+ value2 + " hour(s).");
 		    					 System.out.println("You are hereby rewarded with a quote by "+ quoteAuthor1+":");
-		    					 System.out.println(quoteText1+ "(Source: "+quoteLink1+")");
+		    					 System.out.println(quoteText1+ "(Source: "+quoteLink1+")"+" and a beautiful link to a superstar: "+ picture_url2);
 		    					 System.out.println("");
 		    				 }
 		    				 else if  (value2 < sleepObjectJson.getJSONObject(i).getInt("value")   ){
@@ -395,7 +440,7 @@ public class ClientApp {
 			  			}
 
 			 	//Edit measure water in Life Status
-			   //    ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
+			   //ENDPOINT = "http://10.218.200.214:5901/introsde/processCentric/updateHP";
 			   ENDPOINT = "https://processcentric.herokuapp.com/introsde/processCentric/updateHP";
 			       ClientConfig newclientConfig1 = new ClientConfig();
 			 	   Client newclient1 = ClientBuilder.newClient(newclientConfig1);
@@ -456,6 +501,26 @@ public class ClientApp {
 			        	 String quote2 = newObject9.getString("quote");
 				    	 String author2 = newObject9.getString("author");
 				    	   String permalink2= newObject9.getString("permalink");
+				    	   
+				    	
+				    	 //get quote motivation from instagram api
+
+				    	    //String ENDPOINT46 = "http://10.218.200.214:5901/introsde/processCentric/getPicUrl";
+				    	    String ENDPOINT46 = "https://processcentric.herokuapp.com/introsde/processCentric/getPicUrl";
+				        	DefaultHttpClient newclient46 = new DefaultHttpClient();
+				        	HttpGet newrequest46 = new HttpGet(ENDPOINT46);
+				        	HttpResponse newresponse46 = newclient46.execute(newrequest46);
+
+				        	BufferedReader newrd46 = new BufferedReader(new InputStreamReader(newresponse46.getEntity().getContent()));
+
+				        	StringBuffer newresult46 = new StringBuffer();
+				        	String newline46 = "";
+				        	while ((newline46 = newrd46.readLine()) != null) {
+				        		newresult46.append(newline46);
+				        	}
+
+				        	JSONObject newObject46 = new JSONObject(newresult46.toString());
+				        	 String picture_url3 = newObject46.getString("picture_url");
 			    	// get value from DB  and compare with new value
 
 		    		//String ENDPOINT10 = "http://10.218.200.214:5500/introsde/businessLogic/getGoals";
@@ -488,7 +553,7 @@ public class ClientApp {
 			    					 System.out.println("and you dranks "+ newvalue2 + " litre(s) of water");
 			    					 System.out.println("You are hereby rewarded with a quote by "+ quoteAuthor2+":");
 			    					 System.out.println(quoteText2+ "(Source: "+quoteLink2+")");
-			    					 System.out.println("");
+			    					 System.out.println("Also, here is an interesting link of one of your idols: "+ picture_url3 );
 			    				 }
 			    				 else if  (newvalue2 < waterObjectJson.getJSONObject(i).getInt("value")   ){
 			    					 System.out.println("\nTOO BAD, GOAL NOT REACHED. YOU NEED TO FOCUS. YOU CAN DO IT.");
