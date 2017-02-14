@@ -18,11 +18,11 @@ The application consists of five services that work independently. The interacti
  * Works as a middleman between the data sources and other services. Talks with the Local Database Service and Adapter Service and provides the data to other services in the application.
 * **Business Logic Service:**
  * Developed using REST architectural style
- * Handles the GET/DELETE requests coming from the User Interface layer: gets requests from the UI, asks proper data from Storage Service, processes it and sends it to the UI.
+ * Handles the GET requests coming from the User Interface layer: gets requests from the UI, asks proper data from Storage Service, processes it and sends it to the UI.
  * Handles the calculations if a user has reached a goal or not: gets the posted measure from Process Centric Services, gets the person goals, makes the calculations, gets timeline item, processes it and send it back to Process Centric Service.  
 * **Process Centric Service:**
  * Developed using REST architectural style
- * Handles the POST/PUT requests coming from the User Interface layer
+ * Handles the PUT requests coming from the User Interface layer
  * Interacts with Storage Service for POST/PUT requests and Business Logic Service for checking if the user has reached its goals when new measures are posted.  
 <br/> 
  ![Application architecture](Finall.png)
